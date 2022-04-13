@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Outlet } from "react-router-dom";
 
 // 引入layout的样式
-import '../../static/css/layout.css';
+import '../../static/css/layout.scss';
 // 引入路由表
 import { routes } from '../../router'
 // 引入antd组件
@@ -25,7 +25,7 @@ class LayoutBox extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <Layout class="layout-box">
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo" style={{height: 60}}/>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']}>

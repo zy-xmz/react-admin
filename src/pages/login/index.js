@@ -3,7 +3,7 @@ import { Form, Input, Button, Checkbox } from 'antd';
 // 引入antd图标
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 // 引入login样式
-import '../../static/css/login.css';
+import '../../static/css/login.scss';
 
 export default function Login() {
   const onFinish = (values) => {
@@ -46,8 +46,8 @@ export default function Login() {
             placeholder="Password"
           />
         </Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
+        <Button type="primary" block htmlType="submit">
+          Log in 
         </Button>
       </Form>
     </div>
