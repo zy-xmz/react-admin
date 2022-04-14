@@ -10,7 +10,7 @@ export default function Login() {
     console.log('Received values of form: ', values);
   };
   return (
-    <div class="login-box">
+    <div className="login-box">
       <Form
         name="normal_login"
         className="login-form"
@@ -19,7 +19,7 @@ export default function Login() {
         }}
         onFinish={onFinish}
       >
-        <h2>Believe yourself</h2>
+        <h2>Real</h2>
         <Form.Item
           name="username"
           rules={[

@@ -25,7 +25,7 @@ class LayoutBox extends React.Component {
 
   render() {
     return (
-      <Layout class="layout-box">
+      <Layout className="layout-box">
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo" style={{height: 60}}/>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']}>
@@ -49,9 +49,9 @@ class LayoutBox extends React.Component {
           <Content
             className="layout-content"
             style={{
-              margin: '24px 16px',
+              margin: '16px',
               padding: 24,
-              height: 'calc(100vh - 112px)'
+              height: 'calc(100vh - 96px)'
             }}
           >
             {/* Outlet 路由内容占位 */}
