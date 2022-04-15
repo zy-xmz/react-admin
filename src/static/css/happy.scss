@@ -2,32 +2,78 @@
     .movie-box {
         .title {
             display: flex;
+            align-items: flex-end;
             justify-content: space-between;
-        }
-        .list {
-            display: flex;
-            li {
-                margin-right: 20px;
-                width: 300px;
-                div {
-                    display: flex;
-                    align-items: center;
-                    width: 100%;
-                    height: 180px;
-                    overflow: hidden;
-                    border-radius: 10px;
-                    box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.3);
+            .txt {
+                h3, p {
+                    margin: 0;
                 }
                 p {
-                    width: 100%;
-                    margin-top: 30px;
-                    display: flex;
-                    align-items: baseline;
-                    justify-content: space-between;
-                    span:nth-child(1) {
-                        font-size: 16px;
-                        font-weight: 700;
+                    margin-top: 2px;
+                    color: #999999;
+                    font-size: 12px;
+                }
+            }
+        }
+        .list {
+            margin-top: 20px;
+            ul {
+                display: flex;
+                margin: 0 -10px;
+                li {
+                    margin: 0 10px;
+                    width: 300px;
+                    div {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        height: 180px;
+                        overflow: hidden;
+                        border-radius: 10px;
+                        box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.3);
                     }
+                    p {
+                        width: 100%;
+                        margin-top: 30px;
+                        display: flex;
+                        align-items: baseline;
+                        justify-content: space-between;
+                        span:nth-child(1) {
+                            font-size: 16px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .below-box {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        .music {
+            width: 450px;
+            .title {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                .txt {
+                    h3, p {
+                        margin: 0;
+                    }
+                    p {
+                        margin-top: 2px;
+                        color: #999999;
+                        font-size: 12px;
+                    }
+                }
+            }
+            .list {
+                margin-top: 10px;
+                li {
+                    height: 54px;
+                    border-radius: 10px;
+                    background-color: #f7f7f7;
                 }
             }
         }
