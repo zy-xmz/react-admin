@@ -1,11 +1,6 @@
 import '../../static/css/happy.scss'
 import {
-  LeftSquareOutlined,
-  RightSquareOutlined,
-  MoreOutlined,
   PauseOutlined,
-  HeartOutlined,
-  CaretRightOutlined
 } from '@ant-design/icons'
 import { Image } from 'antd'
 import movie01 from '../../static/img/movie01.png'
@@ -19,6 +14,7 @@ import mv1 from '../../static/img/mv1.webp'
 import mv2 from '../../static/img/mv2.jpg'
 import mv3 from '../../static/img/mv3.webp'
 import mv4 from '../../static/img/mv4.webp'
+import IconFont from '../../components/IconFont'
 
 export default function Happy () {
   return (
@@ -29,8 +25,8 @@ export default function Happy () {
         <div className="title">
           <h3>喜欢的电影</h3>
           <div className="arrows">
-            <LeftSquareOutlined style={{ color: '#ccc', fontSize: 26 }} />
-            <RightSquareOutlined style={{ color: '#ccc', fontSize: 26 }} />
+            <IconFont type="icon-cc-arrow-left-square" style={{ color: '#ccc', fontSize: 26 }}/>
+            <IconFont type="icon-cc-arrow-right-square" style={{ color: '#ccc', fontSize: 26 }}/>
           </div>
         </div>
         {/* 电影 */}
@@ -83,25 +79,25 @@ export default function Happy () {
             <ul>
               <li>
                 <div className="icon">
-                  <CaretRightOutlined style={{ color: 'white', fontSize: 30 }}/>
+                  <IconFont type="icon-play" style={{ color: 'white', fontSize: 30 }}/>
                 </div>
                 <img src={ mv1 } alt="" />
               </li>
               <li>
                 <div className="icon">
-                  <CaretRightOutlined style={{ color: 'white', fontSize: 30 }}/>
+                  <IconFont type="icon-play" style={{ color: 'white', fontSize: 30 }}/>
                 </div>
                 <img src={ mv2 } alt="" />
               </li>
               <li>
                 <div className="icon">
-                  <CaretRightOutlined style={{ color: 'white', fontSize: 30 }}/>
+                  <IconFont type="icon-play" style={{ color: 'white', fontSize: 30 }}/>
                 </div>
                 <img src={ mv3 } alt="" />
               </li>
               <li>
                 <div className="icon">
-                  <CaretRightOutlined style={{ color: 'white', fontSize: 30 }}/>
+                  <IconFont type="icon-play" style={{ color: 'white', fontSize: 30 }}/>
                 </div>
                 <img src={ mv4 } alt="" />
               </li>
@@ -115,34 +111,34 @@ export default function Happy () {
           <div className="list">
             <ul>
               <li>
-                <PauseOutlined />
+                <IconFont type="icon-pause" />
                 <img src={ head } alt="" />
                 <div className="txt">
                   <p>17岁</p>
                   <p>刘德华</p>
                 </div>
                 <span className="duration">4:02</span>
-                <HeartOutlined style={{ fontSize: 18 }}/>
+                <IconFont type="icon-like-o" style={{ fontSize: 20 }}/>
               </li>
               <li>
-                <PauseOutlined />
+                <IconFont type="icon-pause" />
                 <img src={ head2 } alt="" />
                 <div className="txt">
                   <p>一生所爱</p>
                   <p>卢冠廷</p>
                 </div>
                 <span className="duration">4:13</span>
-                <HeartOutlined style={{ fontSize: 18 }}/>
+                <IconFont type="icon-like" style={{ color: 'red', fontSize: 20 }}/>
               </li>
               <li>
-                <PauseOutlined />
+                <IconFont type="icon-play" style={{ color: '#333', fontSize: 20 }}/>
                 <img src={ head3 } alt="" />
                 <div className="txt">
                   <p>盛夏的果实</p>
                   <p>莫文蔚</p>
                 </div>
                 <span className="duration">4:10</span>
-                <HeartOutlined style={{ fontSize: 18 }}/>
+                <IconFont type="icon-like" style={{ color: 'red', fontSize: 20 }}/>
               </li>
             </ul>
           </div>
