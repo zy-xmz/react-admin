@@ -1,0 +1,48 @@
+.simple {
+    display: flex;
+    img {
+        max-width: 100%;
+    }
+    .filter {
+        display: flex;
+        justify-content: space-between;
+    }
+    > div {
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px 2px #eee;
+    }
+    .search-box {
+        flex: 1;
+    }
+    .choose-eat {
+        margin-left: 20px;
+        width: 350px;
+        .result {
+            margin-top: 20px;
+            img {
+                max-height: 410px;
+            }
+        }
+    }
+    .choose-wear {
+        margin-left: 20px;
+        flex-shrink: 0;
+        width: 350px;
+        .title {
+            display: flex;
+            justify-content: space-between;
+            img {
+                width: 34px;
+            }
+        }
+        .result {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            img {
+                max-height: 434px;
+            }
+        }
+    }
+}

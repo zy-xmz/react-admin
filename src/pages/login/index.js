@@ -19,7 +19,7 @@ export default function Login() {
         }}
         onFinish={onFinish}
       >
-        <h2>Real</h2>
+        <h2>心情小站</h2>
         <Form.Item
           name="username"
           rules={[

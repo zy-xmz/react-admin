@@ -49,9 +49,9 @@ class LayoutBox extends React.Component {
           <Content
             className="layout-content"
             style={{
-              margin: '16px',
-              padding: 24,
-              height: 'calc(100vh - 96px)'
+              margin: '15px',
+              padding: 15,
+              height: 'calc(100vh - 86px)'
             }}
           >
             {/* Outlet 路由内容占位 */}
