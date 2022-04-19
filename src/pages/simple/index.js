@@ -12,16 +12,6 @@ export default function Simple () {
 
   return (
     <div className="simple">
-      {/* 找答案 */}
-      <div className="search-box">
-        <h3>找答案</h3>
-        <div className="search">
-          <Search placeholder="输入疑问..." allowClear enterButton onSearch={onSearch} style={{ width: 300 }} />
-        </div>
-        <div className="answer">
-
-        </div>
-      </div>
       {/* 吃啥 */}
       <div className="choose-eat">
         <div className="choose">
@@ -43,6 +33,7 @@ export default function Simple () {
           <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01948357ae884d0000018c1b788d0a.jpg%40900w_1l_2o_100sh.jpg&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652993947&t=1da1dedfd2df81c96edbfb9a296d7d48" alt="" />
         </div>
       </div>
+      {/* 穿啥 */}
       <div className="choose-wear">
         <div className="head">
           <div className="title">
@@ -61,6 +52,16 @@ export default function Simple () {
         </div>
         <div className="result">
           <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs5.mogucdn.com%2Fmlcdn%2Fc45406%2F191125_6fiha4ele4612fc45e8f0aka401bi_3840x5760.jpg&refer=http%3A%2F%2Fs5.mogucdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652995569&t=2c120adf3b300f030867581a1f79ff62" alt="" />
+        </div>
+      </div>
+      {/* 找答案 */}
+      <div className="search-box">
+        <h3>找答案</h3>
+        <div className="search">
+          <Search placeholder="输入疑问..." allowClear enterButton onSearch={onSearch} style={{ width: 300 }} />
+        </div>
+        <div className="answer">
+
         </div>
       </div>
     </div>

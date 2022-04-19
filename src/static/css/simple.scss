@@ -12,11 +12,7 @@
         border-radius: 8px;
         box-shadow: 0 0 10px 2px #eee;
     }
-    .search-box {
-        flex: 1;
-    }
     .choose-eat {
-        margin-left: 20px;
         width: 350px;
         .result {
             margin-top: 20px;
@@ -44,5 +40,9 @@
                 max-height: 434px;
             }
         }
+    }
+    .search-box {
+        flex: 1;
+        margin-left: 20px;
     }
 }
