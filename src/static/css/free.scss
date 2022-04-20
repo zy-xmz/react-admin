@@ -1,0 +1,43 @@
+.free {
+    .up {
+        display: flex;
+        .target {
+            flex: 1;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px 2px #eee;
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                h3 {
+                    margin: 0;
+                }
+            }
+            ul {
+                margin: 10px 0 0 0;
+                li {
+                    padding: 10px;
+                    border-radius: 4px;
+                    border: 1px solid #eee;
+                    .icons {
+                        text-align: right;
+                        > span + span {
+                            margin-left: 20px;
+                        }
+                    }
+                }
+                li + li {
+                    margin-top: 20px;
+                }
+            }
+        }
+        .study {
+            flex: 1;
+        }
+        .keep-fit {
+            flex: 1;
+        }
+    }
+}
