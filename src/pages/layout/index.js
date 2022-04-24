@@ -77,31 +77,20 @@ class LayoutBox extends React.Component {
           </Content>
           {/* 右边抽屉 */}
           <Drawer
-            title="个人中心"
+            title="关于我"
             placement="right"
             closable={false}
             onClose={this.onClose}
             visible={this.state.drawerVisible}
           >
-            <div>
-              <div style={{ textAlign: 'center' }}>
-                <img style={{ width: 150 }} src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202006%2F13%2F20200613013839_M4SY3.thumb.400_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653387451&t=d00f86308e2f9a25b3bfb69f97990d74" alt="" />
+            <div className="personal">
+              <div className="up">
+                <div className="portrait">
+                  <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2F62%2Fbe%2F76%2F62be7611945c3888928bbd9849617424.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653425642&t=97bf757d37aeca9b2ed02e1980df3cbf" alt="" />
+                </div>
                 <h3>某月某日</h3>
               </div>
-              <div>
-              <Form
-                name="basic"
-                labelCol={{
-                  span: 8,
-                }}
-                wrapperCol={{
-                  span: 16,
-                }}
-                initialValues={{
-                  remember: true,
-                }}
-                autoComplete="off"
-              >
+              <Form name="basic" autoComplete="off">
                 <Form.Item label="昵称" name="nickName">
                   <Input />
                 </Form.Item>
@@ -119,7 +108,7 @@ class LayoutBox extends React.Component {
                 </Form.Item>
                 <Form.Item
                   wrapperCol={{
-                    offset: 8,
+                    offset: 11,
                     span: 16,
                   }}
                 >
@@ -128,7 +117,6 @@ class LayoutBox extends React.Component {
                   </Button>
                 </Form.Item>
               </Form>
-              </div>
             </div>
           </Drawer>
         </Layout>
