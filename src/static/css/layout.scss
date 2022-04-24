@@ -16,12 +16,16 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
-.site-layout .site-layout-background {
+.site-layout .ant-layout-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
   background: #fff;
+  .right {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .layout-content {
