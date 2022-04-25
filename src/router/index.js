@@ -5,14 +5,12 @@ import {
   SmileOutlined,
   CoffeeOutlined,
   SendOutlined,
-  UserOutlined,
 } from '@ant-design/icons';
 
 import Home from '../pages/home'
 const Free = lazy(() => import('../pages/free'));
 const Happy = lazy(() => import('../pages/happy'));
 const Simple = lazy(() => import('../pages/simple'));
-const User = lazy(() => import('../pages/user'));
  
 export const routes = [
   {
@@ -38,11 +36,5 @@ export const routes = [
     title: '自由',
     component: <Free />,
     icon: <SendOutlined />
-  },
-  {
-    path: 'user',
-    title: '用户管理',
-    component: <User />,
-    icon: <UserOutlined />
   }
 ]
