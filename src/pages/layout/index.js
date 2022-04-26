@@ -15,8 +15,9 @@ const { Header, Sider, Content } = Layout;
 
 class LayoutBox extends React.Component {
   state = {
-    collapsed: false,
-    drawerVisible: false
+    collapsed: false, // 侧边菜单折叠状态
+    drawerVisible: false, // 右边抽屉的可见状态
+    weatherData: {}, // 天气数据
   }
   // 切换左边menu的折叠和展开
   toggle = () => {
@@ -34,6 +35,24 @@ class LayoutBox extends React.Component {
   onClose = () => {
     this.setState({
       drawerVisible: false,
+    })
+  }
+  
+  componentDidMount () {
+    // this.getWeatherFn()
+  }
+
+  // 获取定位
+  async getLocationFn () {
+    const res = await this.$axios('getWeatherFn')
+    console.log(res)
+  }
+  
+  // 获取天气
+  async getWeatherFn () {
+    const res = await this.$axios('getWeather')
+    this.setState({
+      weatherData: res.now,
     })
   }
 
@@ -60,7 +79,12 @@ class LayoutBox extends React.Component {
               onClick: this.toggle,
             })}
             <div className="right">
-              <img style={{ width: '60px', marginRight: 20 }} src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fxsj%2F15%2Fji%2Ful.jpg%21%2Ffw%2F700%2Fwatermark%2Furl%2FL3hzai93YXRlcl9kZXRhaWwyLnBuZw%2Falign%2Fsoutheast&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652995142&t=e1fd76b3a27230873c3090ee66eff853" alt="" />
+              <div className="weather">
+                {/* 天气图标 */}
+                <i className={ 'qi-' + this.state.weatherData.icon } style={{ fontSize: 25 }}></i>
+                { this.state.weatherData.temp ? this.state.weatherData.temp + '℃' : '' }
+                { this.state.weatherData.text }
+              </div>
               <IconFont onClick={this.showDrawer} type="icon-caidan07" style={{ fontSize: 34, color: '#999' }}></IconFont>
             </div>
           </Header>

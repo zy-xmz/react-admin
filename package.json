@@ -8,6 +8,7 @@
     "axios": "^0.26.1",
     "cra-template": "1.1.3",
     "node-sass": "^7.0.1",
+    "qweather-icons": "^1.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",

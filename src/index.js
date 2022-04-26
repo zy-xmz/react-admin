@@ -5,8 +5,15 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 // 引入antd样式
 import 'antd/dist/antd.css';
+// 引入和风天气图标
+import 'qweather-icons/font/qweather-icons.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// 引入请求函数
+import { request } from './request'
+// 将axios挂载到原型中
+React.Component.prototype.$axios = request;
+
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
