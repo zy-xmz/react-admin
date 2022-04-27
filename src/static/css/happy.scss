@@ -6,13 +6,21 @@
             h3 {
                 margin: 0;
             }
+            .arrows {
+                span {
+                    color: #ccc;
+                    font-size: 26px;
+                }
+            }
         }
         .list {
             margin-top: 20px;
+            overflow: hidden;
             ul {
-                display: flex;
                 margin: 0 -10px;
+                width: 3000px;
                 li {
+                    float: left;
                     margin: 0 10px;
                     width: 300px;
                     div {

@@ -17,6 +17,59 @@ import mv4 from '../../static/img/mv4.webp'
 import IconFont from '../../components/IconFont'
 
 export default function Happy () {
+  // 获取banner数据
+  function getBannerHandle () {
+    return [
+      {
+        img: movie01,
+        name: '千与千寻',
+        score: '9.4',
+      },
+      {
+        img: movie02,
+        name: '寻梦环游记',
+        score: '9.1',
+      },
+      {
+        img: movie03,
+        name: '头脑特工队',
+        score: '8.8',
+      },
+      {
+        img: movie04,
+        name: '青春变形记',
+        score: '8.2',
+      }
+    ]
+  }
+
+  // 渲染banner列表
+  function BannerList (props) {
+    const list = props.list
+    const items = list.map((item, index) => 
+      <li key={ index }>
+        <div>
+          <Image width={ '100%' } src={ item.img } alt="" />
+        </div>
+        <p>
+          <span>{ item.name }</span>
+          <span>{ item.score }</span>
+        </p>
+      </li>
+    )
+    return (<ul>{ items }</ul>)
+  }
+
+  // 向左移动
+  function moveLeftHandle () {
+    console.log('点击了')
+  }
+
+  // 向右移动
+  function moveRightHandle () {
+    console.log('点击了+1')
+  }
+
   return (
     <div className="happy-box">
       {/* 电影列表 */}
@@ -25,50 +78,14 @@ export default function Happy () {
         <div className="title">
           <h3>喜欢的电影</h3>
           <div className="arrows">
-            <IconFont type="icon-cc-arrow-left-square" style={{ color: '#ccc', fontSize: 26 }}/>
-            <IconFont type="icon-cc-arrow-right-square" style={{ color: '#ccc', fontSize: 26 }}/>
+            <IconFont type="icon-cc-arrow-left-square" onClick={ moveLeftHandle }/>
+            <IconFont type="icon-cc-arrow-right-square" onClick={ moveRightHandle }/>
           </div>
         </div>
         {/* 电影 */}
         <div className="list">
-          <ul>
-            <li>
-              <div>
-                <Image width={'100%'} src={movie01} alt="" />
-              </div>
-              <p>
-                <span>千与千寻</span>
-                <span>9.4</span>
-              </p>
-            </li>
-            <li>
-              <div>
-                <Image width={'100%'} src={movie02} alt="" />
-              </div>
-              <p>
-                <span>寻梦环游记</span>
-                <span>9.1</span>
-              </p>
-            </li>
-            <li>
-              <div>
-                <Image width={'100%'} src={movie03} alt="" />
-              </div>
-              <p>
-                <span>头脑特工队</span>
-                <span>8.8</span>
-              </p>
-            </li>
-            <li>
-              <div>
-                <Image width={'100%'} src={movie04} alt="" />
-              </div>
-              <p>
-                <span>青春变形记</span>
-                <span>8.2</span>
-              </p>
-            </li>
-          </ul>
+          {/* banner列表组件 */}
+          <BannerList list={ getBannerHandle() } />
         </div>
       </div>
       {/* 下半部分 */}

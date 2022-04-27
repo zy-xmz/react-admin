@@ -40,11 +40,12 @@ class LayoutBox extends React.Component {
   
   componentDidMount () {
     // this.getWeatherFn()
+    // this.getLocationFn()
   }
 
   // 获取定位
   async getLocationFn () {
-    const res = await this.$axios('getWeatherFn')
+    const res = await this.$axios('getLocation')
     console.log(res)
   }
   

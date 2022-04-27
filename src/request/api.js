@@ -4,9 +4,9 @@
 */
 export const apiList = [
     {
-        name: 'getLo',
+        name: 'getLocation',
         description: '根据ip获取定位',
-        url: 'https://apis.map.qq.com/ws/location/v1/ip?key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77',
+        url: 'https://apis.map.qq.com/ws/location/v1/ip?key=',
         method: 'GET'
     },
     {
