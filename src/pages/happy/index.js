@@ -17,8 +17,8 @@ import mv4 from '../../static/img/mv4.webp'
 import IconFont from '../../components/IconFont'
 
 export default function Happy () {
-  // 获取banner数据
-  function getBannerHandle () {
+  // 获取movie列表数据
+  function getMovieHandle () {
     return [
       {
         img: movie01,
@@ -43,8 +43,8 @@ export default function Happy () {
     ]
   }
 
-  // 渲染banner列表
-  function BannerList (props) {
+  // 渲染movie列表
+  function MovieList (props) {
     const list = props.list
     const items = list.map((item, index) => 
       <li key={ index }>
@@ -84,8 +84,8 @@ export default function Happy () {
         </div>
         {/* 电影 */}
         <div className="list">
-          {/* banner列表组件 */}
-          <BannerList list={ getBannerHandle() } />
+          {/* movie列表组件 */}
+          <MovieList list={ getMovieHandle() } />
         </div>
       </div>
       {/* 下半部分 */}
