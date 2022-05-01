@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from "react-router-dom";
+import { toggleCollapsed } from '../../store/actions'
 
 // 引入layout的样式
 import '../../static/css/layout.scss';
@@ -10,20 +11,16 @@ import { Layout, Menu, Drawer, Form, Input, Button } from 'antd';
 // 引入收起展开的图标
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import IconFont from '../../components/IconFont'
-
 const { Header, Sider, Content } = Layout;
 
 class LayoutBox extends React.Component {
   state = {
-    collapsed: false, // 侧边菜单折叠状态
     drawerVisible: false, // 右边抽屉的可见状态
     weatherData: {}, // 天气数据
   }
   // 切换左边menu的折叠和展开
   toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    })
+    toggleCollapsed()
   }
   // 显示右边抽屉
   showDrawer = () => {
@@ -60,7 +57,7 @@ class LayoutBox extends React.Component {
   render() {
     return (
       <Layout className="layout-box">
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+        <Sider trigger={null} collapsible collapsed={this.props.collapsed}>
           <div className="logo" style={{height: 60}}/>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']}>
             {
@@ -74,7 +71,7 @@ class LayoutBox extends React.Component {
         </Sider>
         <Layout className="site-layout">
           <Header>
-            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            {React.createElement(this.props.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
               style: { fontSize: 20 },
               onClick: this.toggle,

@@ -1,21 +1,21 @@
+import * as types from '../constants'
+
 const initialState = [
     {
-      text: 'Use Redux',
-      id: 0
+      collapsed: false,
     }
   ]
   
 export default function view(state = initialState, action) {
+  console.log(action)
     switch (action.type) {
-      case 'EDIT_USER':
+      case 'TOGGLE_COLLAPSED':
         return [
           ...state,
           {
-            id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
-            text: action.text
+            collapsed: !state.collapsed
           }
         ]
-  
       default:
         return state
     }

@@ -1,1 +1,2 @@
 export const EDIT_USER = 'EDIT_USER'
+export const TOGGLE_COLLAPSED = 'TOGGLE_COLLAPSED'

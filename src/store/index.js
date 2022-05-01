@@ -1,6 +1,7 @@
-import { createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
 import reducer from './reducers'
 
-const store = createStore(reducer)
+// 创建和配置store存储
+const store = configureStore({ reducer })
 
 export default store
