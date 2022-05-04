@@ -1,21 +1,14 @@
 import * as types from '../constants'
 
-const initialState = [
-    {
-      collapsed: false,
-    }
-  ]
+const initialState = {
+  collapsed: false,
+}
   
 export default function view(state = initialState, action) {
-  console.log(action)
+  console.log(action, state.collapsed)
     switch (action.type) {
-      case 'TOGGLE_COLLAPSED':
-        return [
-          ...state,
-          {
-            collapsed: !state.collapsed
-          }
-        ]
+      case types.TOGGLE_COLLAPSED:
+        return { collapsed: !state.collapsed }
       default:
         return state
     }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from "react-router-dom";
 import { toggleCollapsed } from '../../store/actions'
+import { connect } from "react-redux" 
 
 // 引入layout的样式
 import '../../static/css/layout.scss';
@@ -20,6 +21,7 @@ class LayoutBox extends React.Component {
   }
   // 切换左边menu的折叠和展开
   toggle = () => {
+    console.log(this)
     toggleCollapsed()
   }
   // 显示右边抽屉
@@ -147,4 +149,7 @@ class LayoutBox extends React.Component {
   }
 }
 
-export default LayoutBox
+export default connect(
+  state => ({ collapsed: state.collapsed }),
+  { toggleCollapsed }
+)(LayoutBox)
