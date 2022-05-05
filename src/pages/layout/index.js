@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link, Outlet } from "react-router-dom";
-import { toggleCollapsed } from '../../store/actions'
-import { connect } from "react-redux" 
+
+import { connect } from 'react-redux';
+import store from '../../store';
+import { toggleCollapsed, collapsed } from '../../store/reducers/view'
 
 // 引入layout的样式
 import '../../static/css/layout.scss';
@@ -20,9 +22,10 @@ class LayoutBox extends React.Component {
     weatherData: {}, // 天气数据
   }
   // 切换左边menu的折叠和展开
+  
   toggle = () => {
-    console.log(this)
-    toggleCollapsed()
+    store.dispatch(toggleCollapsed())
+    console.log(this.props.view.collapsed)
   }
   // 显示右边抽屉
   showDrawer = () => {
@@ -59,7 +62,7 @@ class LayoutBox extends React.Component {
   render() {
     return (
       <Layout className="layout-box">
-        <Sider trigger={null} collapsible collapsed={this.props.collapsed}>
+        <Sider trigger={null} collapsible collapsed={this.props.view.collapsed}>
           <div className="logo" style={{height: 60}}/>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']}>
             {
@@ -73,7 +76,7 @@ class LayoutBox extends React.Component {
         </Sider>
         <Layout className="site-layout">
           <Header>
-            {React.createElement(this.props.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            {React.createElement(this.props.view.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
               style: { fontSize: 20 },
               onClick: this.toggle,
@@ -149,7 +152,4 @@ class LayoutBox extends React.Component {
   }
 }
 
-export default connect(
-  state => ({ collapsed: state.collapsed }),
-  { toggleCollapsed }
-)(LayoutBox)
+export default connect(state => state)(LayoutBox)

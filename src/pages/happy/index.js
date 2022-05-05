@@ -1,7 +1,4 @@
 import '../../static/css/happy.scss'
-import {
-  PauseOutlined,
-} from '@ant-design/icons'
 import { Image } from 'antd'
 import movie01 from '../../static/img/movie01.png'
 import movie02 from '../../static/img/movie02.webp'

@@ -1,5 +1,5 @@
 // 引入antd表单组件
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 // 引入antd图标
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 // 引入login样式

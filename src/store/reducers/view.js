@@ -1,15 +1,16 @@
-import * as types from '../constants'
+import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-  collapsed: false,
-}
-  
-export default function view(state = initialState, action) {
-  console.log(action, state.collapsed)
-    switch (action.type) {
-      case types.TOGGLE_COLLAPSED:
-        return { collapsed: !state.collapsed }
-      default:
-        return state
+const viewSlice = createSlice({
+  name: 'view',
+  initialState: {
+    collapsed: false
+  },
+  reducers: {
+    toggleCollapsed: (state, action) => {
+      state.collapsed = !state.collapsed
     }
   }
+})
+export const collapsed = (state) => state.collapsed;
+export const { toggleCollapsed } = viewSlice.actions;
+export default viewSlice.reducer
