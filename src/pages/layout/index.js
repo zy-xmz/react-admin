@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 import { connect } from 'react-redux';
 import store from '../../store';
-import { toggleCollapsed, collapsed } from '../../store/reducers/view'
+import { toggleCollapsed } from '../../store/reducers/view'
 
 // 引入layout的样式
 import '../../static/css/layout.scss';
@@ -25,7 +25,6 @@ class LayoutBox extends React.Component {
   
   toggle = () => {
     store.dispatch(toggleCollapsed())
-    console.log(this.props.view.collapsed)
   }
   // 显示右边抽屉
   showDrawer = () => {
