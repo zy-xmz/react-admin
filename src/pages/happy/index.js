@@ -27,7 +27,7 @@ class MovieList extends React.Component {
   render() {
     const list = this.props.list
     const items = list.map((item, index) => 
-      <li key={ index } style={{ 'width': this.props.collapsed ? '306px' : '276px'}}>
+      <li key={ index } style={{ 'width': this.props.liWid + 'px' }}>
         <div>
           <Image width={ '100%' } src={ item.img } alt="" />
         </div>
@@ -37,7 +37,7 @@ class MovieList extends React.Component {
         </p>
       </li>
     )
-    return (<ul>{ items }</ul>)
+    return (items)
   }
 }
 
@@ -45,6 +45,16 @@ class Happy extends React.Component {
   constructor(props) {
     super(props)
     this.movieBox = React.createRef()
+  }
+
+  // 根据collapsed状态，获取单个li的宽度
+  get liWid () {
+    return this.props.view.collapsed ? '306' : '276'
+  }
+
+  // 获取电影Ul的Dom对象
+  get movieDom () {
+    return this.movieBox.current
   }
 
   // 获取movie列表数据
@@ -90,13 +100,12 @@ class Happy extends React.Component {
 
   // 向左移动
   moveLeftHandle = () => {
-    console.log(this.movieBox.current)
-
+    this.movieDom.style.transform = 'translateX(-' + (this.liWid * 4 + 60) + 'px)'
   }
 
   // 向右移动
-  moveRightHandle () {
-    console.log('点击了+1')
+  moveRightHandle = () => {
+    this.movieDom.style.transform = 'translateX(' + (this.liWid * 4 + 60) + 'px)'
   }
 
   render() {
@@ -115,7 +124,9 @@ class Happy extends React.Component {
           {/* 电影 */}
           <div className="list">
             {/* movie列表组件 */}
-            <MovieList collapsed={this.props.view.collapsed} list={ this.getMovieHandle() } ref={this.movieBox} />
+            <ul ref={this.movieBox}>
+              <MovieList collapsed={this.props.view.collapsed} list={ this.getMovieHandle() } liWid={ this.liWid } />
+            </ul>
           </div>
         </div>
         {/* 下半部分 */}
