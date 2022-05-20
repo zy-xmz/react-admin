@@ -14,11 +14,16 @@
             }
         }
         .list {
+            position: relative;
             margin-top: 20px;
+            height: 226px;
             overflow: hidden;
             ul {
+                position: absolute;
+                top: 0;
+                display: flex;
                 margin: 0 -10px;
-                width: 3000px;
+                transition: left 1s;
                 li {
                     float: left;
                     margin: 0 10px;

@@ -45,6 +45,13 @@ class Happy extends React.Component {
   constructor(props) {
     super(props)
     this.movieBox = React.createRef()
+    this.moveNum = 0
+    this.timer = null
+  }
+
+  // 获取电影Ul的Dom对象
+  get movieDom () {
+    return this.movieBox.current
   }
 
   // 根据collapsed状态，获取单个li的宽度
@@ -52,9 +59,33 @@ class Happy extends React.Component {
     return this.props.view.collapsed ? '306' : '276'
   }
 
-  // 获取电影Ul的Dom对象
-  get movieDom () {
-    return this.movieBox.current
+  // 获取电影列表单次移动距离
+  get singleDistance () {
+    return this.liWid * 4 + 60
+  }
+
+  // 获取当前电影ul的left值
+  get currentUlLeft () {
+    return this.movieDom ? Math.abs(parseFloat(this.movieDom.style.left)) : 0
+  }
+
+  // 滑动后的剩余ul宽度
+  get spareUlWid () {
+    return this.movieDom ? this.movieDom.offsetWidth - this.currentUlLeft : 0
+  }
+
+  // 向左移动
+  moveLeftHandle = () => {
+    if (this.spareUlWid <= this.singleDistance) return
+    this.moveNum--
+    this.movieDom.style.left = (this.singleDistance * this.moveNum) + 'px'
+  }
+
+  // 向右移动
+  moveRightHandle = () => {
+    if (this.currentUlLeft <= 0) return
+    this.moveNum++
+    this.movieDom.style.left = (this.singleDistance * this.moveNum) + 'px'
   }
 
   // 获取movie列表数据
@@ -98,16 +129,6 @@ class Happy extends React.Component {
     ]
   }
 
-  // 向左移动
-  moveLeftHandle = () => {
-    this.movieDom.style.transform = 'translateX(-' + (this.liWid * 4 + 60) + 'px)'
-  }
-
-  // 向右移动
-  moveRightHandle = () => {
-    this.movieDom.style.transform = 'translateX(' + (this.liWid * 4 + 60) + 'px)'
-  }
-
   render() {
     return (
       <div className="happy-box">
@@ -117,14 +138,18 @@ class Happy extends React.Component {
           <div className="title">
             <h3>喜欢的电影</h3>
             <div className="arrows">
-              <IconFont type="icon-cc-arrow-left-square" onClick={ this.moveLeftHandle }/>
-              <IconFont type="icon-cc-arrow-right-square" onClick={ this.moveRightHandle }/>
+              <IconFont
+                type="icon-cc-arrow-left-square"
+                onClick={ this.moveLeftHandle }/>
+              <IconFont
+                type="icon-cc-arrow-right-square"
+                onClick={ this.moveRightHandle }/>
             </div>
           </div>
           {/* 电影 */}
           <div className="list">
             {/* movie列表组件 */}
-            <ul ref={this.movieBox}>
+            <ul ref={this.movieBox} style={{ left: 0 }}>
               <MovieList collapsed={this.props.view.collapsed} list={ this.getMovieHandle() } liWid={ this.liWid } />
             </ul>
           </div>
